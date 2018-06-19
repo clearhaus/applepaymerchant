@@ -33,7 +33,7 @@ valid SSL certificate, to this container. By default port 8080 is used.
      ```bash
      docker pull clearhaus/applepaymerchant
      ```
-     Use `docker-compose` to start the container. Token will be printed in the
+     Use `docker-compose` to start the container. Tokens will be printed in the
      output log.
      ```bash
      docker-compose up

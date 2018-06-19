@@ -33,8 +33,6 @@ def do_validation(uri, cert, key, cfg)
     "displayName": cfg['displayName']
   )
 
-  puts(data)
-
   worker = new_ssl_http_worker(uri, cert, key)
 
   worker.request(req, data)
@@ -63,7 +61,8 @@ def read_configuration(p)
     raise 'Config must be parse as JSON'
   end
 
-  if [cfg['merchantIdentifier'], cfg['initiativeContext'], cfg['displayName']].map(&:nil?).any?
+  required_keys = %w[merchantIdentifier initiativeContext displayName]
+  unless required_keys.map { |x| cfg.key?(x) }.all?
     raise 'Configuration missing keys'
   end
 
@@ -82,10 +81,9 @@ class ApplePayMerchant < Roda
       r.redirect '/index.html'
     end
 
+    # Print the token to standard out.
     r.post 'completesession' do
-      rcvd_body = r.body.read
-      puts(rcvd_body)
-
+      puts(r.body.read)
       r.halt(200)
     end
 
