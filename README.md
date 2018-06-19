@@ -4,6 +4,9 @@ A simple Apple Pay merchant implementation, used for generating tokens for
 testing an Apple Pay payment processing gateway. It charges 1DKK, approximately
 0.156$ on a provided Apple Pay card.
 
+Note that no payment processing is performed, so no actual charges will be
+added to the card.
+
 This setup requires you to set up a forward from your Apple Pay website, with a
 valid SSL certificate, to this container. By default port 8080 is used.
 
