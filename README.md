@@ -33,23 +33,23 @@ valid SSL certificate, to this container. By default port 8080 is used.
      ```bash
      docker pull clearhaus/applepaymerchant
      ```
-     Use `docker-compose` to get start the container. Token will be printed in
-     the output log.
+     Use `docker-compose` to start the container. Token will be printed in the
+     output log.
      ```bash
      docker-compose up
      ```
 
    * **Manual workflow**
 
-     Starting the server should be done in a docker container, using the
-     following command:
+     During development/testing, the server can be started inside a docker
+     container.
 
      ```bash
      docker run -ti --rm -v "$PWD:/opt/applepaymerchant" -p 8080:8080 ruby:2.3 bash
      ```
 
      You need to install dependencies using `bundle install`.
-     Starting the server is done with
+     Start the server with
      ```bash
      bundle exec puma --config config/puma.rb
      ```
