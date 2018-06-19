@@ -1,5 +1,8 @@
 FROM debian:stretch
 
+LABEL Author="kse@clearhaus.com" \
+      Maintainer="Clearhaus"
+
 EXPOSE 8080/tcp
 
 COPY . /opt/applepaymerchant/
