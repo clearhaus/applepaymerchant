@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  applepaymerchant:
+    image: clearhaus/applepaymerchant
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./merchant_identity.pem:/opt/applepaymerchant/merchant_identity.pem
+      - ./merchant_identity.key:/opt/applepaymerchant/merchant_identity.key
+      - ./config.json:/opt/applepaymerchant/config.json
