@@ -1,3 +1,4 @@
 merchant_identity.pem
 merchant_identity.key
+payment_processing.key
 config.json
