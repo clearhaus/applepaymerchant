@@ -6,6 +6,11 @@ services:
     ports:
       - '8080:8080'
     volumes:
+      - .:/opt/applepaymerchant
       - ./merchant_identity.pem:/opt/applepaymerchant/merchant_identity.pem
       - ./merchant_identity.key:/opt/applepaymerchant/merchant_identity.key
       - ./config.json:/opt/applepaymerchant/config.json
+  rabbitmq:
+    image: rabbitmq:3.7-alpine
+    ports:
+      - '5672:5672'

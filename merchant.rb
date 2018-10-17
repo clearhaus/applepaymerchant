@@ -103,6 +103,8 @@ class ApplePayMerchant < Roda
       puts('Payment Token:', JSON.unparse(payment_data))
 
       puts('Symmetric key:', symmetric_key)
+
+      $x&.publish(JSON.unparse(payment_token: payment_data, symmetric_key: symmetric_key), routing_key: $q.name)
       r.halt(200)
     end
 
