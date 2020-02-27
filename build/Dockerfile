@@ -13,7 +13,7 @@ RUN apt-get update && \
         ruby bundler ruby-dev make gcc libc6-dev && \
     bundle install --without test && \
     DEBIAN_FRONTEND=noninteractive apt-get --purge remove -y \
-        ruby-dev make gcc libc6-dev && \
+        ruby-dev make gcc libc6-dev libssl-dev && \
     DEBIAN_FRONTEND=noninteractive apt-get --purge autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
