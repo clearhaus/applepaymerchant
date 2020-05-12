@@ -10,7 +10,7 @@ WORKDIR /opt/applepaymerchant/
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        ruby bundler ruby-dev make gcc libc6-dev && \
+        ruby bundler ruby-dev make gcc libc6-dev libssl-dev && \
     bundle install --without test && \
     DEBIAN_FRONTEND=noninteractive apt-get --purge remove -y \
         ruby-dev make gcc libc6-dev libssl-dev && \
