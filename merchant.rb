@@ -112,7 +112,7 @@ class ApplePayMerchant < Roda
       @config = read_configuration('config.json')
       # Allowed validationURL's, reference Listing 1 in
       # https://developer.apple.com/documentation/apple_pay_on_the_web/setting_up_your_server
-      @url_pattern = /\A(cn-)?apple-pay-gateway-[-a-z0-9]+\.apple\.com\z/
+      @url_pattern = /\A(cn-)?apple-pay-gateway[-a-z0-9]*\.apple\.com\z/
 
       validation_url = r.POST['validationURL']
       validation_url = CGI.unescape(validation_url) if validation_url
