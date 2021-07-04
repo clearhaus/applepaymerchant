@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     aes256gcm_decrypt (1.0.0)
+    amq-protocol (2.3.0)
+    bunny (2.11.0)
+      amq-protocol (~> 2.3.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     dry-configurable (0.7.0)
@@ -48,6 +51,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bunny (>= 2.9.2)
   pedicel (= 0.0.5)
   pry
   puma
