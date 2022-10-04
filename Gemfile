@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'pedicel', '= 0.0.5'
+gem 'pedicel', '~> 1'
 gem 'puma'
 gem 'roda'
 
