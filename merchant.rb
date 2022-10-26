@@ -83,9 +83,16 @@ end
 # ApplePayMerchant is the handler for requests to applepaymerchant.clrhs.dk
 # Started by puma.
 class ApplePayMerchant < Roda
-  plugin :public
   plugin :halt
   plugin :json_parser
+
+  # Avoid caching of served files.
+  # Headers borrowed from https://stackoverflow.com/a/2068407
+  plugin :public, headers: {
+    'Cache-Control' => 'no-cache, no-store, must-revalidate',
+    'Pragma' => 'no-cache',
+    'Expires' => '0'
+  }
 
   route do |r|
     @cert, @key = load_merchant_identity_certificates
