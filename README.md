@@ -44,7 +44,7 @@ valid SSL certificate, to this container. By default port 8080 is used.
      Use `docker-compose` to start the container. Tokens will be printed in the
      output log.
      ```bash
-     docker-compose run --rm applepaymerchant
+     docker-compose run --rm --service-ports applepaymerchant
      ```
 
    * **Manual workflow**
