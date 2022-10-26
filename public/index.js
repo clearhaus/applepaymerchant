@@ -44,8 +44,8 @@ function purchaseEvent() {
   var trx;
 
   const paymentRequest = {
-    supportedNetworks:['masterCard', 'visa'],
-    merchantCapabilities: [ "supports3DS" ],
+    supportedNetworks: ['masterCard', 'visa'],
+    merchantCapabilities: ['supports3DS'],
 
     countryCode: 'DK',
     currencyCode: 'DKK',
