@@ -9,8 +9,4 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./merchant_identity.pem:/opt/applepaymerchant/merchant_identity.pem
-      - ./merchant_identity.key:/opt/applepaymerchant/merchant_identity.key
-      - ./payment_processing.pem:/opt/applepaymerchant/payment_processing.pem
-      - ./payment_processing.key:/opt/applepaymerchant/payment_processing.key
-      - ./config.json:/opt/applepaymerchant/config.json
+      - ./:/opt/applepaymerchant
