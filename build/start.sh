@@ -42,8 +42,10 @@ LINE_NUMBER=$(
 head -n $(($LINE_NUMBER-1)) "$TEMPLATE_FILE" > "$OUTPUT_FILE"
 
 if [ "$answer" = "f" -o "$answer" = "F" ]; then
+  echo 'Setting the scene for first-in-series.'
   echo "$FIRST_IN_SERIES_DETAILS" >> "$OUTPUT_FILE"
 else
+  echo 'Setting the scene for non-series.'
   echo "$NON_SERIES_DETAILS" >> "$OUTPUT_FILE"
 fi
 
