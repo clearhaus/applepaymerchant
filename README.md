@@ -24,6 +24,11 @@ valid SSL certificate, to this container. By default port 8080 is used.
    - `merchant_identity.pem`
    - `merchant_identity.key`
 
+   The Payment Processing certificate (signed by Apple) and key must be added to
+   the root of the directory as
+   - `payment_processing.pem`
+   - `payment_processing.key`
+
 3. **Create `config.json`**
 
    The file `config.json.example` contains a list of required keys.
