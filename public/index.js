@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   debug('DOM content loaded');
   if (window.ApplePaySession) {
     if (ApplePaySession.canMakePayments) {
-      showApplePayButton();
+      debug('Apple Pay session can make payments')
+      showApplePayButtons();
+    } else {
+      debug('Apple Pay session cannot make payments')
     }
   }
 });
