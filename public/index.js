@@ -5,7 +5,8 @@ function debug(string, error = false) {
   } else {
     quote.addClass('green lighten-4')
   }
-  quote.html(string).appendTo('.debugContainer');
+  var d = new Date();
+  quote.html(d.toISOString() + '&nbsp;&nbsp;' + string).appendTo('.debugContainer');
 }
 
 function showApplePayButton() {
