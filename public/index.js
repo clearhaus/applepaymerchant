@@ -50,7 +50,7 @@ function purchaseEvent() {
     countryCode: 'DK',
     currencyCode: 'DKK',
 
-    // PAYMENT_REQUEST_DETAILS_TO_BE_INSERTED_HERE
+    total: { label: 'Test Purchase', amount: '1.00', },
   };
 
   var session;
