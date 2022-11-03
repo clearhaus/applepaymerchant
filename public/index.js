@@ -9,7 +9,7 @@ function debug(string, error = false) {
   quote.html(d.toISOString() + '&nbsp;&nbsp;' + string).appendTo('.debugContainer');
 }
 
-function showApplePayButton() {
+function showApplePayButtons() {
     HTMLCollection.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
     const buttons = document.getElementsByClassName("apple-pay-button");
     for (let button of buttons) {
@@ -41,7 +41,7 @@ function newestSupportedApplePayVersion() {
 }
 
 // When Apple Pay button is clicked.
-function purchaseEvent() {
+function purchaseEvent(paymentType) {
   $('.debugContainer').html('');
   debug('Purchase Event fired');
 
@@ -54,8 +54,31 @@ function purchaseEvent() {
     countryCode: 'DK',
     currencyCode: 'DKK',
 
-    total: { label: 'Test Purchase', amount: '1.00', },
+    total: { amount: '1.00' }
   };
+
+  if (paymentType == 'non-series') {
+    debug('Non-series payment');
+    paymentRequest.total.label = 'Non-series purchase';
+  } else if (paymentType == 'first-in-series') {
+    debug('First-in-series payment');
+    paymentRequest.total.label = 'First-in-series purchase';
+    paymentRequest.recurringPaymentRequest = {
+      paymentDescription: 'Subscription',
+      regularBilling: {
+        label: 'Subscription',
+        amount: '1.00',
+        paymentTiming: 'recurring',
+        recurringPaymentStartDate: new Date(),
+        recurringPaymentIntervalUnit: 'month',
+        recurringPaymentIntervalCount: 3,
+      },
+      managementURL: 'https://applepaymerchant.clrhs.dk'
+    };
+  } else {
+    debug('Invalid payment type; returning');
+    return;
+  }
 
   var session;
   try {
