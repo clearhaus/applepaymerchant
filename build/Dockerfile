@@ -18,7 +18,4 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-COPY build/start.sh /usr/local/bin/start
-RUN chmod a+x /usr/local/bin/start
-
-CMD ["/usr/local/bin/start"]
+CMD exec bundle exec puma --config config/puma.rb
