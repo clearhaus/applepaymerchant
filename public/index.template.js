@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function newestSupportedApplePayVersion() {
-	if (ApplePaySession.supportsVersion(3)) {
+  if (ApplePaySession.supportsVersion(3)) {
     return 3;
-	} else if (ApplePaySession.supportsVersion(2)) {
+  } else if (ApplePaySession.supportsVersion(2)) {
     return 2;
   } else {
     return 1;
@@ -64,7 +64,7 @@ function purchaseEvent() {
 
   debug('ApplePaySession created');
 
-	// https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/providing_merchant_validation
+  // https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/providing_merchant_validation
   session.onvalidatemerchant = function(ev) {
     trx = $.post({
       url: '/validatemerchant',
