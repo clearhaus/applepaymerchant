@@ -76,7 +76,7 @@ function purchaseEvent(paymentType) {
       managementURL: 'https://applepaymerchant.clrhs.dk'
     };
   } else {
-    debug('Invalid payment type; returning');
+    debug('Invalid payment type');
     return;
   }
 
