@@ -1,8 +1,5 @@
 FROM debian:bullseye-slim
 
-LABEL Author="operations.pci@clearhaus.com" \
-      Maintainer="Clearhaus PCI"
-
 EXPOSE 8080/tcp
 
 COPY . /opt/applepaymerchant/
