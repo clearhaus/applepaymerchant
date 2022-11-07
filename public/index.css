@@ -50,6 +50,11 @@ div.container {
     text-align: center;
 }
 
+.column {
+    float: left;
+    width: 50%;
+}
+
 body {
     background: linear-gradient(180deg, #ffffff, #d7d7d7); 
     background-repeat: no-repeat; 

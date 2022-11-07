@@ -27,9 +27,18 @@
       <div class="row">
         <div class="col s12">
           <h3>Test Apple&nbsp;Pay purchasing</h3>
-          <p>A button should appear below if your browser is Apple&nbsp;Pay compatible.</p>
+          <p>Two buttons will appear below if your browser is Apple&nbsp;Pay compatible.</p>
 
-          <button class="apple-pay-button" onclick="purchaseEvent()"/>
+          <div class="column">
+            <p>Non-series payment:</p>
+            <button class="apple-pay-button" onclick="purchaseEvent('non-series')"/>
+          </div>
+
+          <div class="column">
+            <p>First-in-series payment:</p>
+            <button class="apple-pay-button" onclick="purchaseEvent('first-in-series')"/>
+          </div>
+
         </div>
       </div>
 
