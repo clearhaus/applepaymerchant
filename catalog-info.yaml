@@ -3,7 +3,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: applepaymerchant
-  description: Clearhaus Apple Pay merchant for internal testing of Apple Pay compatibility
+  description: Clearhaus Apple Pay merchant for internal testing of Apple Pay
+    compatibility
   tags:
     - confidentiality:internal
     - integrity:integrity-neutral
