@@ -12,6 +12,9 @@ RUN apt-get update && \
     apt-get --purge remove -y \
         ruby-dev make gcc libc6-dev libssl-dev && \
     apt-get --purge autoremove -y && \
+    # perl-base is Essential, hence --allow-remove-essential; nothing in this
+    # image needs perl at runtime.
+    apt-get purge -y --allow-remove-essential perl-base && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
